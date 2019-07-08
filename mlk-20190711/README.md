@@ -1,6 +1,6 @@
 ## Day One
 
-We have a three part #tidytuesday #rstats challenge for you. Using #rvest and #tidyverse, scrape the I Have a Dream Speech text into a 29 row #tibble from https://aol.it/2NFuaum.
+On July 11th, 1977, #MLK was presented with the Presidential Medal of Freedom. We have an three part #rstats challenge to commerate that day. Day One: Using #rvest and #tidyverse, scrape the I Have a Dream speech text into a 29 row #tibble (one per paragraph) from https://aol.it/2NFuaum #tidytuesday
 
 ## Day Two
 
