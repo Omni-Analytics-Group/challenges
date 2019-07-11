@@ -21,3 +21,15 @@ dream_tbl <- tibble(
     Paragraph = 1:length(dream_text),
     Text = dream_text
 )
+
+## Our #rstats challenge solution for Day One is here: 
+## https://github.com/Omni-Analytics-Group/challenges/blob/master/mlk-20190711/solution/solution.R.
+## Day Two: Perform the following #tidytext operations on your #tibble: 
+## (1) Unnest words, (2) Remove stop words, (3) Append afinn sentimen
+
+dream_words <- dream_tbl %>%
+    unnest_tokens(word, Text) %>%
+    anti_join(stop_words) %>%
+    left_join(
+        get_sentiments("afinn")
+        , by = c("word" = "word"))
