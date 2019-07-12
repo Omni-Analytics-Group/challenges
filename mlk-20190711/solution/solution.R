@@ -33,3 +33,13 @@ dream_words <- dream_tbl %>%
     left_join(
         get_sentiments("afinn")
         , by = c("word" = "word"))
+
+dream_sent <- dream_words %>%
+    group_by(word) %>%
+    summarise(value = mean(value),
+              count = n()) %>%
+    filter(!is.na(value))
+
+ggplot(data = dream_sent, aes(label = word, size = count, colour = value)) +
+    geom_text_wordcloud() +
+    scale_colour_gradient2()
